@@ -1,5 +1,5 @@
 
-# api-file.io
+# apiFileIo
 
 ApiClient for upload and download file from file.io
 https://www.file.io/
@@ -10,8 +10,8 @@ https://www.file.io/
 Write commands in your go project
 
 ```bash
-  go get -u github.com/Kolyan4ik99/api-file.io
-  go mod download
+go get -u github.com/Kolyan4ik99/apiFileIo
+go mod download
 ```
 
 ## Example
