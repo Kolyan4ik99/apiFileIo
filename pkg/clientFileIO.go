@@ -1,7 +1,7 @@
 package pkg
 
 import (
-	"api-file.io/intermal"
+	"github.com/Kolyan4ik99/apiFileIo/intermal"
 	"log"
 	"net/http"
 	"os"
