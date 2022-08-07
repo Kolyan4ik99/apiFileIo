@@ -14,7 +14,7 @@ import (
 
 // UploadFile [POST /] Загрузка файла с именем fileName,
 // файл должен существовать в рабочей дериктории
-func (c *api_file_io.ClientFileIO) UploadFile(fileName string) (*CreateFileInfo, error) {
+func (c *ClientFileIO) UploadFile(fileName string) (*CreateFileInfo, error) {
 	body, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal("bad file")
