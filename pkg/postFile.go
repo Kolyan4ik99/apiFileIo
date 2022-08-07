@@ -12,9 +12,9 @@ import (
 	"os"
 )
 
-// PostFile [POST /] Загрузка файла с именем fileName,
+// UploadFile [POST /] Загрузка файла с именем fileName,
 // файл должен существовать в рабочей дериктории
-func (c *ClientFileIO) PostFile(fileName string) (*CreateFileInfo, error) {
+func (c *ClientFileIO) UploadFile(fileName string) (*CreateFileInfo, error) {
 	body, err := os.Open(fileName)
 	if err != nil {
 		log.Fatal("bad file")

@@ -59,3 +59,7 @@ func (c *ClientFileIO) DownloadFile(file io.Writer, key string) error {
 	}
 	return nil
 }
+
+func (c CreateFileInfo) Info() string {
+	return fmt.Sprintf("Link=[%s] Key=[%s] Size file(byte)=[%d]", c.Link, c.Key, c.Size)
+}
