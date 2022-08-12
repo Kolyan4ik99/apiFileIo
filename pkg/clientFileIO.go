@@ -2,9 +2,9 @@ package pkg
 
 import (
 	"github.com/Kolyan4ik99/apiFileIo/intermal"
+	"io"
 	"log"
 	"net/http"
-	"os"
 	"time"
 )
 
@@ -15,19 +15,15 @@ type ClientFileIO struct {
 	keyAuth string
 }
 
-func NewClientFileIO(timeout time.Duration) *ClientFileIO {
+func NewClientFileIO(logDirection io.Writer, timeout time.Duration) *ClientFileIO {
 	if timeout <= 0 {
 		log.Fatal("timeout has to more than 0")
-	}
-	loggerFile, err := os.OpenFile("log-file", os.O_RDWR|os.O_CREATE|os.O_APPEND, 0666)
-	if err != nil {
-		log.Fatal("can't create logger file", err)
 	}
 
 	return &ClientFileIO{
 		client: http.Client{
 			Transport: intermal.LoggingRoundTripper{
-				Logger: loggerFile,
+				Logger: logDirection,
 				Next:   http.DefaultTransport,
 			},
 			Timeout: timeout,

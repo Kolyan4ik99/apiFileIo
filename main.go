@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	client := pkg.NewClientFileIO(time.Second * 5)
+	client := pkg.NewClientFileIO(os.Stdout, time.Second*5)
 	cl, err := client.UploadFile("log-file") // Загружаем файл с названием log-file в удалёный сервер
 	if err != nil {
 		log.Fatal(err)
